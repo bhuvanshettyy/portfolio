@@ -417,19 +417,19 @@ body {
 }
 
 .instagram-button:hover {
-    background-color: rgba(131, 58, 180, 0.2); /* Light Instagram color on hover */
+    background-color: rgb(241, 2, 219); /* Light Instagram color on hover */
 }
 
 .youtube-button:hover {
-    background-color: rgba(255, 0, 0, 0.2); /* Light YouTube red on hover */
+    background-color: rgb(255, 0, 0); /* Light YouTube red on hover */
 }
 
 .linkedin-button:hover {
-    background-color: rgba(0, 119, 181, 0.2); /* Light LinkedIn blue on hover */
+    background-color: rgba(10, 102, 194); /* Light LinkedIn blue on hover */
 }
 
 .github-button:hover {
-    background-color: rgba(51, 51, 51, 0.2); /* Light GitHub gray on hover */
+    background-color: rgba(1, 4, 9); /* Light GitHub gray on hover */
 }
 
 /* Contact Details Section */
