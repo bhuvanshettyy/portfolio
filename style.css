@@ -80,32 +80,20 @@ body {
    
 }
 
-
-
-
-
-
 .projects-container {
     margin: 10px; 
     display: flex;
-    flex-wrap: wrap; 
-    
-    
-    
+    flex-wrap: wrap;   
 }
 
 .projects-container2 {
     margin: 10px; 
     display: flex;
-    flex-wrap: wrap; 
-    
-    
-    
+    flex-wrap: wrap;      
 }
 
 .project-card {
-    cursor: pointer;
-  
+    cursor: pointer; 
     border-radius: 10px;
     overflow: hidden;
     width: 350px; 
@@ -153,7 +141,6 @@ body {
     align-items: center;
     text-align: center;
 }
-
 
 .project-card2 img {
     width: 100%;
@@ -477,12 +464,6 @@ body {
     transition: transform 0.2s ease, box-shadow 0.5s ease;                                                                  
 }
 
-
-
-/*  */
-
-
-
 /* ABOUT ME Section */
 .container6 {
     background-color: hsl(0, 0%, 100%);
@@ -514,8 +495,6 @@ body {
     line-height: 1.8;
     /* margin-bottom: 20px; */
 }
-
-
 
 
 /* PROFILE */
@@ -616,3 +595,49 @@ body {
 .education-block ul {
     padding: 0 0 0 15px
 }
+
+
+.contact-color {
+    margin-left: 5px;
+    color: #96a9b9; /* Subtle color, use as is or adjust for contrast */
+    text-decoration: none; /* Removed wavy text-decoration for a cleaner look */
+    font-weight: 500; /* Gives a nice weight without being too bold */
+    font-size: 1rem; /* Standard size, you can adjust for your design */
+    transition: color 0.9s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.contact-color:hover {
+    color: #bebfc0; /* Slightly darker shade for hover */
+    text-decoration: underline; /* Subtle underline effect on hover */
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .scroll-item {
+    animation: scroll-left 10s linear infinite;
+    white-space: nowrap;
+    padding-right: 50px;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .scroll-container {
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  @keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+  
+   
