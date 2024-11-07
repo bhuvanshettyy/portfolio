@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 2;
     padding: 0;
     background-color: #16141a;
 }
@@ -60,25 +60,15 @@ body {
 }
 
 .follow-button {
-    position: absolute;
-    top: 50%;
-    right: 10px; /* Adjusted right margin */
+    position: fixed;
+    top: 25%;
+    left: 65%;
+    /* right: 10px; Adjusted right margin */
     transform: translateY(-50%);
     max-width: 400px; /* Adjusted max-width */
 }
 
-.instagram-button,
-.contact-button {
-    display: inline-block; /* or display: inline; */
 
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px; /* Add margin between buttons */
-   
-}
 
 .projects-container {
     margin: 10px; 
@@ -302,67 +292,8 @@ body {
     background-color: rgb(20, 24, 32);
     border-radius: 2px;
   }
-  
-/* Media Query for smaller screens */
-@media only screen and (max-width: 600px) {
-    .header {
-        height: 120px;
-    }
 
-    .profile {
-        left: 10px;
-    }
-
-    .profile-picture{
-        margin-right: 4px;
-    }
-
-    .atharva{
-        font-size: 20px;
-    }
-    .kaabil{
-        font-size: 10px;
-    }
-
-    .profile-picture {
-        width: 80px;
-        height: 80px;
-    }
-
-    .follow-button {
-        right: 10px;
-        max-width: 180px;
-        font-size: 10px;
-    }
-
-    .project-card{
-        width: 100%;
-        margin: 10px;
-        height: fit-content;
-    }
-    .project-card img {
-        width: 100%;
-        height: 60%;
-       
-        
-    }
-
-    .project-card2{
-        width: 100%;
-        margin: 10px;
-        height: 250px;
-        
-    }
-    
-
-    .container2{
-        width: 100%;
-        height: fit-content;
-        align-items: center;
-    }
-
-    
-}
+ 
 
 .social-icon {
     display: flex;
@@ -596,6 +527,77 @@ body {
     padding: 0 0 0 15px
 }
 
+ 
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .header {
+        height: 120px;
+    }
+
+    .profile {
+        left: 10px;
+    }
+
+    .profile-picture{
+        margin-right: 4px;
+    }
+
+    .atharva{
+        font-size: 20px;
+    }
+    .kaabil{
+        font-size: 10px;
+    }
+
+    .profile-picture {
+        width: 80px;
+        height: 80px;
+    }
+
+    .follow-button {
+        right: 10px;
+        max-width: 180px;
+        font-size: 10px;
+    }
+
+    .project-card{
+        width: 100%;
+        margin: 10px;
+        height: fit-content;
+    }
+    .project-card img {
+        width: 100%;
+        height: 60%;
+       
+        
+    }
+
+    .project-card2{
+        width: 100%;
+        margin: 10px;
+        height: 250px;
+        
+    }
+    
+
+    .container2{
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+    }
+
+    
+}
+
+@media (max-width: 768px) { /* Adjust for screens smaller than 768px */
+    .follow-button {
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%);
+        max-width: 90%; /* Limit the width to fit the screen */
+    }
+}
+
+
 
 .contact-color {
     margin-left: 5px;
@@ -639,5 +641,7 @@ body {
     from { transform: translateX(0); }
     to { transform: translateX(-100%); }
   }
+
+
   
    
