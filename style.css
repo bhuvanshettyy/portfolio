@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 body {
-    margin: 2;
+    margin: 0;
     padding: 0;
     background-color: #16141a;
     overflow-x: hidden; /* Disable horizontal scrolling */
-  margin: 0;
-  padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 0%, 100%);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .header {
@@ -25,37 +33,53 @@ body {
     transform: translateY(-50%);
     display: flex;
     align-items: center;
-    
 }
-
-
 
 .profile-picture {
     border-radius: 100px;
-    
     width: 200px;
     height: 200px;
-    /* object-fit: cover; */
     margin-right: 15px;
-    /* transform: rotate(90deg); */
-   
+    transition: transform 1s ease, box-shadow 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.profile-picture:hover {
+    transform: scale(1.1); /* Makes the picture slightly larger */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.461); /* Adds a stronger shadow */
+    filter: brightness(0.9); /* Brightens the image slightly */
 }
 
 .atharva, .kaabil {
-    
     color: white;
-    
 }
 
 .atharva {
+    margin-left:10%;
     font-family: 'Lora', serif;
-    color: white;
     font-size: 44px;
     font-weight: 700;
     margin-bottom: 0;
+    transition: transform 0.5s ease, filter 0.5s ease; /* Ensures smooth transition even before hover */
 }
 
+.atharva:hover {
+    transform: scale(1.05); /* Slightly larger, subtle enough for a smooth effect */
+    filter: brightness(1.3); /* Moderate brightness to enhance the image without overexposing */
+    transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease; /* Smooth and consistent transition */
+}
 
+.profile-text h1 span{
+    color:#9dff00;
+
+}
+.profile-text h1 span:hover{
+    /* color:#f10000; */
+    font-weight:lighter;
+    transform: scale(1.9);
+    transition: box-shadow 0.1s ease;
+}
 
 .kaabil {
     margin-top: -3px;
@@ -64,84 +88,68 @@ body {
 .follow-button {
     position: absolute;
     top: 45%;
-    /* left: 65%; */
-    right: 10px; 
+    right: 10px;
     transform: translateY(-50%);
     max-width: 400px; /* Adjusted max-width */
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+    margin: 20px 0;
 }
 
-
-
-.projects-container {
-    margin: 10px; 
+.projects-container, .projects-container2 {
+    margin: 10px;
     display: flex;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
 }
 
-.projects-container2 {
-    margin: 10px; 
-    display: flex;
-    flex-wrap: wrap;      
+.project-card, .project-card2 {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: rgb(20, 24, 32);
+    color: rgb(155, 155, 155);
 }
 
 .project-card {
-    cursor: pointer; 
-    border-radius: 10px;
-    overflow: hidden;
-    width: 350px; 
+    width: 350px;
     height: 250px;
-    margin-bottom: 20px; 
-    margin-right: 20px;
-    background-color: rgb(20, 24, 32);
-    color: rgb(155, 155, 155);
-}
-
-.project{
-    margin-bottom: 10px;
-    font-family: 'Inter', sans-serif;
-    /* color: rgb(212, 212, 212);  */
-    color: #00796B; 
-    margin-left: 20px;
-}
-
-.project-card img {
-    width: 100%;
-    height: 70%;
-    object-fit: cover;
-    
 }
 
 .project-card2 {
-    cursor: pointer;
-  
-    border-radius: 10px;
-    overflow: hidden;
-    width: 280px; 
+    width:min-content;
     height: 220px;
-    margin-bottom: 20px; 
-    margin-right: 20px;
-    background-color: rgb(20, 24, 32);
-    color: rgb(155, 155, 155);
+  
 }
-.title2 {
-    color: rgb(155, 155, 155);
-    font-weight: bold;
-    font-size:medium;
+
+.project, .title2 {
     font-family: 'Inter', sans-serif;
-    padding-left: 5px;
-    padding-right: 2px;
-    align-items: center;
+    color: #00796B;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.project {
+    margin-bottom: 10px;
+}
+
+.title2 {
+    font-weight: bold;
+    font-size: medium;
+    /* padding-left: 1em; */
+    /* padding-right: 1em; */
     text-align: center;
 }
 
-.project-card2 img {
+.project-card img, .project-card2 img {
     width: 100%;
     height: 70%;
     object-fit: cover;
-    
 }
 
-.skills{
+.skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -151,16 +159,18 @@ body {
 }
 
 .project-title {
-    font-family: 'Inter', sans-serif; /* Use the Inter font or your preferred font */
-    margin: 5px; 
+    margin: 5px;
     font-size: smaller;
 }
 
 .social-container img {
     margin-right: 3px;
     margin-left: 3px;
-    margin-right: 3px;
-    
+}
+
+.social-container a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .social-container {
@@ -174,11 +184,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-  .social-container a {
-    text-decoration: none;
-    color: inherit;
-  }
-
 .button {
     padding: 15px 25px;
     background-color: #0073b1; /* LinkedIn Blue */
@@ -191,34 +196,33 @@ body {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-  .button:hover {
+.button:hover {
     background-color: #005582; /* Darker blue on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
+
 .social-container .button:active {
     background-color: #003d61; /* Even darker blue when clicked */
     transform: scale(1); /* Return to original size */
 }
 
-  .icon {
+.icon {
     font-size: 24px; /* Set your desired icon size */
     margin-left: 10px; /* Adjust margin as needed */
-  }
-  
-  .skillset{
-    flex-wrap: wrap; 
-    
+}
+
+.skillset {
+    flex-wrap: wrap;
     display: flex;
-  }
-  .container2 {
-    width: 250px;
-    height: 200px;
+}
+
+.container2 {
+    width: 240px;
+    height: 160px;
     background-color: rgb(20, 24, 32);
     border-radius: 10px;
     display: flex;
     flex-direction: column; /* Change to column for vertical alignment */
-    
-
     padding: 20px 10px; /* Adjusted padding for better spacing */
     margin: 10px;
 }
@@ -233,18 +237,16 @@ body {
 }
 
 .tags-container {
-   
     display: flex;
     flex-wrap: wrap; /* Allow tags to wrap to the next line if needed */
     margin-top: 20px;
-
 }
 
-.box {
+.box, .box2 {
     min-width: 30px;
     height: 30px;
     background-color: rgb(26, 31, 41);
-    margin: 5px 5px 5px 5px; /* Adjusted margin for better spacing */
+    margin: 5px; /* Adjusted margin for better spacing */
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -257,34 +259,19 @@ body {
 }
 
 .box2 {
-    min-width: 30px;
-    height: 30px;
-    background-color: rgb(26, 31, 41);
-    margin: 5px 5px 5px 5px; /* Adjusted margin for better spacing */
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Inter', sans-serif;
-    font-size: medium;
-    padding-left: 4px;
-    color: rgb(155, 155, 155);
-    padding-right: 4px;
-    border: 1px solid #833AB4 ;
+    border: 1px solid #833AB4;
 }
 
 /* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
     width: 12px;
     border-radius: 2px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background-color: rgb(20, 24, 32);
     border-radius: 2px;
 }
-  
- 
 
 .social-icon {
     display: flex;
@@ -312,7 +299,6 @@ body {
     margin: 20px 0;
 }
 
-
 .button img {
     width: 40px;
     height: 40px;
@@ -320,9 +306,10 @@ body {
 }
 
 .button:hover {
-    transform: scale(1.1); /* Slightly enlarge the logo on hover */
-    background-color: rgba(0, 0, 0, 0.1); /* Light background on hover */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+    transform: scale(1.2); /* Slightly enlarge the logo on hover */
+    background-color:#031a12; /* Light background on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    /* filter: brightness(1.1); */
 }
 
 .instagram-button:hover {
@@ -378,12 +365,9 @@ body {
 }
 
 .contact-details:hover {
-    /* transform: translateY(-10px); */
-    /* box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); */
-    transform: scale(1.1); /* Makes the picture slightly larger */
-     /* Adds a stronger shadow */
-    margin: 20px auto;  
-    transition: transform 0.2s ease, box-shadow 0.5s ease;                                                                  
+    transform: scale(1.29); /* Makes the picture slightly larger */
+    margin: 21px auto;
+    transition: transform 1.0s ease, box-shadow 0.5s ease;
 }
 
 /* ABOUT ME Section */
@@ -415,37 +399,7 @@ body {
     font-size: 18px;
     color: #555;
     line-height: 1.8;
-    /* margin-bottom: 20px; */
 }
-
-
-/* PROFILE */
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    transition: transform 1s ease, box-shadow 0.5s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-}
-
-.profile-picture:hover {
-    transform: scale(1.1); /* Makes the picture slightly larger */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.461); /* Adds a stronger shadow */
-    filter: brightness(0.9); /* Brightens the image slightly */
-}
-
-/* NAME */
-.atharva {
-    transition: transform 0.5s ease, filter 0.5s ease; /* Ensures smooth transition even before hover */
-}
-
-.atharva:hover {
-    transform: scale(1.05); /* Slightly larger, subtle enough for a smooth effect */
-    filter: brightness(1.3); /* Moderate brightness to enhance the image without overexposing */
-    transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease; /* Smooth and consistent transition */
-}
-
 
 /* EDUCATION */
 #education {
@@ -460,7 +414,8 @@ body {
     margin: 50px auto;
     transition: transform 0.5s ease, box-shadow 0.9s ease;
 }
-#education:hover{
+
+#education:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
@@ -473,7 +428,7 @@ body {
     margin-bottom: 20px;
     letter-spacing: 1.5px;
     color: #374054;
-    margin-bottom: 50px
+    margin-bottom: 50px;
 }
 
 .education-block {
@@ -481,44 +436,43 @@ body {
     margin: 0 auto 30px auto;
     padding: 15px;
     border: 1px solid #dcd9d9;
-    text-align: left
+    text-align: left;
 }
+
 .education-block:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .education-block h3 {
-    
     font-weight: 500;
     float: left;
     margin: 0;
-    color: #374054
+    color: #374054;
 }
 
 .education-block span {
     color: #74808a;
-    float: right
+    float: right;
 }
 
 .education-block h4 {
     color: #74808a;
     clear: both;
     font-weight: 500;
-    margin: 0 0 15px 0
+    margin: 0 0 15px 0;
 }
 
 .education-block p, .education-block ul {
     margin: 0;
     color: #74808a;
-    font-size: 0.9em
+    font-size: 0.9em;
 }
 
 .education-block ul {
-    padding: 0 0 0 15px
+    padding: 0 0 0 15px;
 }
 
- 
 /* Media Query for smaller screens */
 @media only screen and (max-width: 600px) {
     .header {
@@ -529,20 +483,18 @@ body {
         left: 10px;
     }
 
-    .profile-picture{
-        margin-right: 4px;
-    }
-
-    .atharva{
-        font-size: 20px;
-    }
-    .kaabil{
-        font-size: 10px;
-    }
-
     .profile-picture {
+        margin-right: 4px;
         width: 80px;
         height: 80px;
+    }
+
+    .atharva {
+        font-size: 20px;
+    }
+
+    .kaabil {
+        font-size: 10px;
     }
 
     .follow-button {
@@ -551,33 +503,22 @@ body {
         font-size: 10px;
     }
 
-    .project-card{
+    .project-card, .project-card2 {
         width: 100%;
         margin: 10px;
         height: fit-content;
     }
-    .project-card img {
+
+    .project-card img, .project-card2 img {
         width: 100%;
         height: 60%;
-       
-        
     }
 
-    .project-card2{
-        width: 100%;
-        margin: 10px;
-        height: 250px;
-        
-    }
-    
-
-    .container2{
+    .container2 {
         width: 100%;
         height: fit-content;
         align-items: center;
     }
-
-    
 }
 
 @media (max-width: 768px) { /* Adjust for screens smaller than 768px */
@@ -588,15 +529,13 @@ body {
     }
 }
 
-
-
 .contact-color {
     margin-left: 5px;
     color: #96a9b9; /* Subtle color, use as is or adjust for contrast */
     text-decoration: none; /* Removed wavy text-decoration for a cleaner look */
     font-weight: 500; /* Gives a nice weight without being too bold */
     font-size: 1rem; /* Standard size, you can adjust for your design */
-    transition: color 0.9s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
+    transition: color 0.5s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .contact-color:hover {
@@ -604,25 +543,19 @@ body {
     text-decoration: underline; /* Subtle underline effect on hover */
 }
 
-  .hero .hero-subtitle {
+.hero .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 600;
-  }
-  
-  @media (min-width: 768px) {
-    .hero .hero-subtitle {
-      font-size: 2.5rem;
-    }
-  }
-
-  /* social mediaaaaaaaa */
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: hsl(0, 0%, 100%);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
+
+@media (min-width: 768px) {
+    .hero .hero-subtitle {
+        font-size: 2.5rem;
+    }
+}
+
+/* Social Media Links */
+
 
 .social-media-links {
     display: flex;
@@ -651,8 +584,8 @@ body {
 .social-icon:hover {
     transform: scale(1.1);
 }
-   
-.copyright{
+
+.copyright {
     color: #ccccac;
     width: 100%;
     text-align: center;
@@ -660,76 +593,49 @@ body {
     background: #262626;
     font-weight: 300;
     margin-top: 20px;
- }
+}
 
 
 
 
- 
+
+
+.typed-text {
+    font-size: 1rem;
+  color: #000000; 
+}
 
 
 
 
- /* Prevent horizontal scrollbar on the body */
-html, body {
-    overflow-x: hidden; /* Hide horizontal scrolling */
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Container holding all items */
-  .scroll-container {
+
+
+
+.scroll-container {
     position: relative;
-    display: flex;
-    width: 100%;
-    height: 100vh; /* Full height of the viewport */
-    overflow: hidden; /* Prevent horizontal overflow */
-  }
-  
-  /* Wrapper for the scroll items (two sets) */
-  .scroll-items {
-    display: flex;
-    animation: scroll 30s linear infinite; /* Slower animation */
-  }
-  
-  /* Individual scroll items */
-  .scroll-item {
+    overflow: hidden;
     white-space: nowrap;
-    padding-right: 50px; /* Space between items */
+    width: 100%;
+}
+
+.scroll-items {
+    display: inline-flex;
+    animation: scroll 10s linear infinite; /* Adjust the duration as needed */
+    animation-timing-function:ease-in;
+   
+}
+
+.scroll-item {
+    margin-right: 20px; 
     flex-shrink: 0; /* Prevent items from shrinking */
-    font-size: 24px; /* Adjust font size as needed */
-  }
-  
-  /* Keyframes for continuous scrolling effect */
-  @keyframes scroll {
+
+}
+
+@keyframes scroll {
     0% {
-      transform: translateX(100%); /* Start off-screen to the right */
-    }
-    50% {
-      transform: translateX(0); /* Move into view */
+        transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%); /* Move out of view to the left */
+        transform: translateX(-50%); /* Move half the width of the container */
     }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+}
