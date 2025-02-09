@@ -6,6 +6,8 @@ body {
     background-color: #16141a;
     overflow-x: hidden; /* Disable horizontal scrolling */
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
 }
 
 body {
@@ -18,20 +20,23 @@ body {
 
 .header {
     position: relative;
-    height: 250px;
-    border-radius: 10px;
+    height: 300px; /* Increased height */
+    border-radius: 10px; /* Remove border radius for modern look */
     overflow: hidden;
-    background: rgb(109,0,251);
-    background: linear-gradient(90deg, rgba(109,0,251,1) 0%, rgba(57,185,158,1) 0%, rgba(9,121,110,1) 20%, rgba(3,50,25,1) 60%, rgba(2,0,36,1) 100%);
-    margin: 10px;
+    background: linear-gradient(135deg, #000000, #004d40); /* Simplified gradient */
+    margin: 10; /* Remove margin for full-width look */
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
 }
 
 .profile {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative; /* Changed from absolute */
+    left: 0;
+    transform: none;
+    width: 100%;
     display: flex;
+    justify-content: space-between; /* Better spacing */
     align-items: center;
 }
 
@@ -41,12 +46,12 @@ body {
     height: 200px;
     margin-right: 15px;
     transition: transform 1s ease, box-shadow 0.5s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 20px rgb(191, 174, 174);
     object-fit: cover;
 }
 
 .profile-picture:hover {
-    transform: scale(1.1); /* Makes the picture slightly larger */
+    transform: scale(1.4); /* Makes the picture slightly larger */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.461); /* Adds a stronger shadow */
     filter: brightness(0.9); /* Brightens the image slightly */
 }
@@ -114,8 +119,16 @@ body {
 }
 
 .project-card {
-    width: 350px;
-    height: 250px;
+    cursor: pointer;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #2c2c2c; /* Slightly lighter for better contrast */
+    color: #e0e0e0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transition */
+    flex: 0 0 30%; /* Ensure each card takes up equal space */
+    width: 350px; /* Set a max width */
+    height: 340px; /* Consistent height */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
 }
 
 .project-card2 {
@@ -136,17 +149,23 @@ body {
 }
 
 .title2 {
+    color: #829e9b;  /* Changed from rgb(155, 155, 155) to your theme color */
     font-weight: bold;
     font-size: medium;
-    /* padding-left: 1em; */
-    /* padding-right: 1em; */
     text-align: center;
+}
+
+/* Add hover effect if desired */
+.title2:hover {
+    color: #acebe4;  /* Slightly lighter shade for hover */
+    transition: color 0.3s ease;
 }
 
 .project-card img, .project-card2 img {
     width: 100%;
-    height: 70%;
+    height: 65%; /* Adjusted to fit new card size */
     object-fit: cover;
+    border-bottom: 3px solid #00bfa5; /* Thicker border for emphasis */
 }
 
 .skills {
@@ -219,12 +238,20 @@ body {
 .container2 {
     width: 240px;
     height: 160px;
-    background-color: rgb(20, 24, 32);
+    background: linear-gradient(135deg, #1a1a1a, #17004d);
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
     border-radius: 10px;
     display: flex;
-    flex-direction: column; /* Change to column for vertical alignment */
-    padding: 20px 10px; /* Adjusted padding for better spacing */
+    flex-direction: column;
+    padding: 20px 10px;
     margin: 10px;
+}
+
+.container2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,77,64,0.2);
 }
 
 .title {
@@ -245,7 +272,10 @@ body {
 .box, .box2 {
     min-width: 30px;
     height: 30px;
-    background-color: rgb(26, 31, 41);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
     margin: 5px; /* Adjusted margin for better spacing */
     border-radius: 10px;
     display: flex;
@@ -256,6 +286,11 @@ body {
     padding-left: 4px;
     color: rgb(155, 155, 155);
     padding-right: 4px;
+}
+
+.box:hover, .box2:hover {
+    background: rgba(255,255,255,0.1);
+    transform: scale(1.05);
 }
 
 .box2 {
@@ -620,7 +655,7 @@ body {
 
 .scroll-items {
     display: inline-flex;
-    animation: scroll 10s linear infinite; /* Adjust the duration as needed */
+    animation: scroll 60s linear infinite; /* Adjust the duration as needed */
     animation-timing-function:ease-in;
    
 }
@@ -638,4 +673,94 @@ body {
     100% {
         transform: translateX(-50%); /* Move half the width of the container */
     }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 4rem 0 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #000000, #004d40);
+    border-radius: 2px;
+}
+
+/* Unique and improved styles for project-related elements */
+.projects-container {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Add space between items */
+    padding: 20px; /* Add padding for better spacing */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.project-card:hover {
+    transform: scale(1.08); /* More noticeable enlargement on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.project-title {
+    font-family: 'Inter', sans-serif;
+    color: #949090; /* Vibrant color for titles */
+    margin: 15px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, #00796B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleFade 1s ease-in;
+}
+
+@keyframes titleFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.custom-social-media {
+    position: absolute;
+    /* top: 10px;  */
+    bottom: 1em;
+    right: 10px; /* Adjust as needed to align with the right of the header */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.custom-follow-button {
+    display: flex;
+    gap: 15px;
+}
+
+.custom-social-icon {
+    color: #a09696;
+    font-size: 30px;
+    transition: color 0.3s ease;
+}
+
+.custom-social-icon:hover {
+    color: #e64500; /* Change this color to match your theme */
 }
