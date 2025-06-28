@@ -237,7 +237,21 @@ body {
 
 .container2 {
     width: 240px;
-    height: 160px;
+    height: 200px;
+    background: linear-gradient(135deg, #1a1a1a, #17004d);
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    margin: 10px;
+}
+
+.container3 {
+    width: 270px;
+    height: 200px;
     background: linear-gradient(135deg, #1a1a1a, #17004d);
     border: 1px solid #333;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -288,12 +302,35 @@ body {
     padding-right: 4px;
 }
 
-.box:hover, .box2:hover {
+.box3 {
+    min-width: 30px;
+    height: 30px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    margin: 5px; /* Adjusted margin for better spacing */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: medium;
+    padding-left: 4px;
+    color: rgb(155, 155, 155);
+    padding-right: 4px;
+}
+
+.box:hover, .box2:hover, .box3:hover {
     background: rgba(255,255,255,0.1);
     transform: scale(1.05);
 }
 
 .box2 {
+    border: 1px solid #833AB4;
+}
+
+.box3 {
     border: 1px solid #833AB4;
 }
 
@@ -414,6 +451,7 @@ body {
     width: 80%;
     margin: 50px auto;
     transition: transform 0.5s ease, box-shadow 0.9s ease;
+    
 }
 
 .container6:hover {
@@ -428,6 +466,7 @@ body {
     padding-bottom: 10px;
     margin-bottom: 20px;
     letter-spacing: 1.5px;
+    text-align: center;
 }
 
 .container6 p {
@@ -467,7 +506,7 @@ body {
 }
 
 .education-block {
-    max-width: 700px;
+    max-width: auto;
     margin: 0 auto 30px auto;
     padding: 15px;
     border: 1px solid #dcd9d9;
@@ -483,7 +522,7 @@ body {
     font-weight: 500;
     float: left;
     margin: 0;
-    color: #374054;
+    color: #3c4a69;
 }
 
 .education-block span {
@@ -492,10 +531,18 @@ body {
 }
 
 .education-block h4 {
-    color: #74808a;
+    color: #555;
     clear: both;
     font-weight: 500;
     margin: 0 0 15px 0;
+}
+
+.education-block co {
+    color: #5c6c90;
+    clear: both;
+    font-weight:600;
+    margin: 0 0 15px 0;
+    font-size:small;
 }
 
 .education-block p, .education-block ul {
